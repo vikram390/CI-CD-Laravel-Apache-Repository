@@ -12,7 +12,6 @@ phases:
      - echo Build started on `date`
      - echo Installing composer deps
      - composer install
-     - cp extra/.env ./
      - php artisan cache:clear
 
  post_build:
