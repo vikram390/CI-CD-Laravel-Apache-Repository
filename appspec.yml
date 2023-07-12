@@ -2,17 +2,18 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/
+    destination: /var/www/html
+
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies.sh
-      timeout: 300
-      runas: root
+    - location: scripts/clear_cache.sh
+      runas: ubuntu
+
   AfterInstall:
-    - location: scripts/build_again.sh
-      timeout: 600
-      runas: user
+    - location: scripts/composer_install.sh
+      runas: ubuntu
+
   ApplicationStart:
-    - location: scripts/start_application.sh
-      timeout: 300
+    - location: scripts/restart_apache.sh
       runas: root
+
