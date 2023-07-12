@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Change to the Laravel project directory
-cd /var/www/html
+cd /var/www/html/laravelapp
 
 # Clear the application cache
 php artisan cache:clear
